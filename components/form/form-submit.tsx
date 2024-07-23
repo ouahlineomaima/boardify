@@ -9,7 +9,7 @@ interface FormSubmitProps{
     className?: string;
     variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "primary";
 }
-export const FormSubmit = ({ children, disabled, className, variant}: FormSubmitProps) => {
+export const FormSubmit = ({ children, disabled, className, variant = "primary"}: FormSubmitProps) => {
     const {pending} = useFormStatus();
   return (
     <Button disabled={pending || disabled} type="submit" className={className} variant={variant} size="sm">
