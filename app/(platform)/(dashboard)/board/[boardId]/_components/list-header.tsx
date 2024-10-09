@@ -8,10 +8,12 @@ import { error } from "console";
 import { useState, useRef, ElementRef } from "react";
 import { toast } from "sonner";
 import { useEventListener } from "usehooks-ts";
+import { ListOptions } from "./list-options";
 interface ListHeaderProps {
   data: List;
+  onAddCard: ()=>void
 }
-export const ListHeader = ({ data }: ListHeaderProps) => {
+export const ListHeader = ({ data, onAddCard }: ListHeaderProps) => {
   const [title, setTile] = useState(data.title);
   const [isEditing, setIsEditing] = useState(false);
   const formRef = useRef<ElementRef<"form">>(null);
@@ -83,6 +85,7 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
+      <ListOptions onAddCard={onAddCard} data={data}/>
     </div>
   );
 };
