@@ -31,6 +31,7 @@ export default function RootLayout({
         {/* Hotjar Tracking Code */}
         <Script
           strategy="afterInteractive"
+          id="hotjar"
           dangerouslySetInnerHTML={{
             __html: `
               (function(h,o,t,j,a,r){
